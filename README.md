@@ -1,36 +1,23 @@
-# SMART INDIA HACKATHON 2020 (Winner)
+# AI DATA PREPARER TOOL
 
-## SK216: Data Crawlers to crawl keywords in area of crime, child abuse, woman abuse etc.
+## Data Preparer to crawl keywords in Web sites
 
-## FALCON - AI Data Crawler
+## AI Data Preparer for integration into Azure Machine Learning
 
-See installation [here](#how-to-install)
 
 ## What is this?
-Falcon Search has been created to aid the National Crime Records Bureau keeping in mind the need for an efficient data crawler that collects classified data from the web based on given keywords. It is a SaaS web data integration (WDI) platform which converts unstructured web data into structured format by extracting, preparing and integrating web data in areas of crime for consumption in criminal investigation agencies. 
+The AI Data Preparer Tool is a robust solution designed to assist industries in need of an efficient web crawler that gathers categorized data from the internet using specified keywords. This SaaS web data integration (WDI) platform is capable of transforming unstructured web data into a structured format. It achieves this by extracting, preparing, and integrating web data into Azure Machine Learning models.
 
+The tool provides a visual environment for automating the workflow of extracting and transforming web data. After the target website URL is specified, the web data extraction module offers a visual environment for designing automated workflows to harvest data. This goes beyond traditional HTML/XML parsing of static content by automating user interactions, thereby accessing data that might not be immediately visible. Once the data is extracted, the software offers comprehensive data preparation capabilities for harmonizing and cleansing the web data.
 
-Falcon provides a visual environment for automating the workflow of extracting and transforming web data. After specifying the target website url, the web data extraction module provides a visual environment for designing automated workflows for harvesting data, going beyond HTML/XML parsing of static content to automate end user interactions yielding data that would otherwise not be immediately visible. Once extracted, the software provides full data preparation capabilities that are used for harmonizing and cleansing the web data. 
+For consuming the results, the AI Data Preparer Tool provides several options. It has its own visualization and dashboarding module to assist criminal investigators in gaining the insights they need. Additionally, it provides APIs that offer full access to all functionalities available on the platform, allowing for direct integration of web data.
 
-For consuming the results, Falcon provides several options. It has its own visualization and dashboarding module to help criminal investigators gain the insights that they need. It also provides APIs that offer full access to everything that can be done on our platform, allowing web data to be integrated directly.  
+The AI Data Preparer Tool is capable of crawling ten million links and scraping one million links per month using workers. Furthermore, it has the potential to exceed this number if tested under standard cloud platforms. This makes it a powerful tool for industries that rely heavily on web data for their operations.
 
-
-FALCON is capable of crawling ten million links and scrape one million links per month using Celery Worker. It moreover has the potential of outperforming this number if tested under standard cloud platforms. 
 
 ![falcon](https://user-images.githubusercontent.com/28597524/100134752-b1f8ec80-2eae-11eb-9852-51a6c2e5a5ba.png "FALCON")
 
 
-
-## Deployed on Pythonanywhere
-The first version of FALCON (only a demo version) is deployed, it is limited to threaded crawling/scraping. AI tasks and CELERY workers are disabled due to free hosting service provider. To experience FALCON to its full capability please [install](#how-to-install) it and use.
-
-Deployed [here](http://sih2020sk216slytherin.pythonanywhere.com "here").
-
-[![Deploy](https://www.pythonanywhere.com/static/anywhere/images/PA-logo.svg)](http://sih2020sk216slytherin.pythonanywhere.com)
-
-### Test User
-username - sih2020sk216
-password - Sih#2020
 
 
 ## Features
@@ -57,20 +44,11 @@ password - Sih#2020
 
 
 
-### Efficient
-FALCON uses the celery worker feature to take up multiple tasks from the user and perform it in a queue.
-We can have upto 10 celery workers at a time. This feature allows us to crawl around ten million links and scrap around one million links.
+### Efficiency
+AI DATA PREPARER uses the  worker feature to take up multiple tasks from the user and perform it in a queue.
+We can have upto 10  workers at a time. This feature allows us to crawl around ten million links and scrap around one million links.
 
 
-## How to Install
-- Create virtual enviorement, then activate it.
-- Install all the requirements file, ``` pip install -r requirements.txt```
-- Setup RabbitMQ server for broker service, ``` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
-- start your rabbitmq broker service.
-- In falcon setting change ```CELERY_BROKER_URL = 'your_rabbitmq_address'```, if your not using the default port for RabbitMQ.
-- Run celery worker, ```celery -A falcon worker -l info```
-- For first time usage, ```python manage.py migrate``` and create admin ```python manage.py createsuperuser```
-- Run FALCON, ```python manage.py runserver```
 
 
 
