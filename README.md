@@ -48,6 +48,22 @@ The AI Data Preparer Tool is capable of crawling ten million links and scraping 
 AI DATA PREPARER uses the  worker feature to take up multiple tasks from the user and perform it in a queue.
 We can have upto 10  workers at a time. This feature allows us to crawl around ten million links and scrap around one million links.
 
+### Test User
+username - sih2020sk216
+password - Sih#2020
+
+
+## How to Install
+- Create virtual enviorement, then activate it.
+- Install all the requirements file, ``` pip install -r requirements.txt```
+- Setup RabbitMQ server for broker service, ``` docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management```
+- start your rabbitmq broker service.
+- In falcon setting change ```CELERY_BROKER_URL = 'your_rabbitmq_address'```, if your not using the default port for RabbitMQ.
+- Run celery worker, ```celery -A falcon worker -l info```
+- For first time usage, ```python manage.py migrate``` and create admin ```python manage.py createsuperuser```
+- Run FALCON, ```python manage.py runserver```
+
+
 
 
 
